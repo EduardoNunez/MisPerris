@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+    <style> 
+        body{
+            background-color: rgb(109, 204,170);
+            color: white;
+        }
+    </style>
+    
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+
+                <br>
+                <h1>Ingresar Usuario</h1>
+                <br>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{ form | crispy }}
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Login" id="btn btn-info">
+
+                </form>
+                <hr>
+                <a href="{% url 'register' %}">Registrate</a>
+                <hr>
+                <a href="{% url 'social:begin' 'facebook' %}">Login con Facebook</a>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

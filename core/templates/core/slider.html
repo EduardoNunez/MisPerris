@@ -1,0 +1,27 @@
+
+
+{% load static %}
+
+<div class="slider"> 
+        
+        {% for m_g in m_slider %} <!--Esta variable "mascotas" es la que traje de Views, es la variable que contiene todas las mascotas-->
+        <div>
+            <img class="imagen_landing"   src="{{m_g.imagen_Mascota.url}}" alt="{{ m_g.nombre_mascota }}.jpg" title="Hola mi nombre es {{ m_g.nombre_mascota }} y busco hogar " width="400px">
+        </div>
+        {% endfor %}
+
+</div>
+
+<div class="landing">
+
+
+    <h1 class="eslogan">Rescate y adopción de perros callejeros</h1>
+    <ul class="social">
+        <li><img src="{% static 'core/img/socialfacebook.png' %}" alt="facebook"></li>
+        <li><img src="{% static 'core/img/socialplus.png' %}" alt="twitter"></li>
+        <li><img src="{% static 'core/img/social-inst.png' %}" alt="instagram"></li>
+        <li><img src="{% static 'core/img/social-twitter.png' %}" alt="instagram"></li>
+    </ul>
+    <h1 class="numero color_blanco">+56 9 98765431</h1>
+
+</div>

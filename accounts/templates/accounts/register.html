@@ -1,0 +1,57 @@
+<!-- AQUI VAMOS A HACER EL FORMULARIO DE REGISTRO -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de usuario</title>
+
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <style> 
+        body{
+            background-color: rgb(109, 204,170);
+            color: white;
+        }
+    </style>
+    
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"> 
+            
+            <br>
+            <h2>Registro de Usuario</h2>
+            <br>
+        
+            <!-- {% load crispy_forms_tags %} -->
+            <form action="" method="POST">
+                
+                {% csrf_token %} <!--TODOS los formulario los tiene que llevar por seguridad-->
+                <!-- {{ form | crispy }} -->
+
+                <!-- <input type="hidden" name="csrfmiddlewaretoken" value="lxqdO71T2ihGByHBiKUeRfZS9kpxSr9Ll6D7YvAyZqGvdiQT2gffO50B2nnQJqMV"> TODOS los formulario los tiene que llevar por seguridad -->
+                <p> <label for="id_username">Nombre de usuario:</label><input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" class="form-control col-md-9"> <span class="helptext">Requerido. 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_ </span></p>
+                <p><label for="id_first_name">Nombre:</label> <input type="text" name="first_name" required="" id="id_first_name" class="form-control col-md-9"></p>
+                <p><label for="id_last_name">Apellido:</label> <input type="text" name="last_name" required="" id="id_last_name" class="form-control col-md-9"></p>
+                <p><label for="id_email">Email:</label> <input type="email" name="email" required="" id="id_email" class="form-control col-md-9"></p>
+                <p><label for="id_password1">Contraseña:</label> <input type="password" name="password1" required="" id="id_password1" class="form-control col-md-9"> <span class="helptext"></span></p><ul><li>Su contraseña no puede asemejarse tanto a su otra información personal.</li><li>Su contraseña debe contener al menos 8 caracteres.</li><li>Su contraseña no puede ser una clave utilizada comunmente.</li><li>Su contraseña no puede ser completamente numérica.</li></ul><p></p>
+                <p><label for="id_password2">Contraseña (confirmación):</label> <input type="password" name="password2" required="" id="id_password2" class="form-control col-md-9"> <span class="helptext">Para verificar, introduzca la misma contraseña anterior.</span></p> <!--Con esto se van a imprimir todos los campos que vienen desde Django-->
+                <br>
+                <input type="submit" value="Registrar" class="form-control col-md-3">
+                <br>
+
+            </form>
+            <!-- Estamos imprimiendo la variable que hicimos en Views de accounts -->
+            <h3>{{ mensaje }}</h3>
+
+        </div>
+    </div>
+    
+</body>
+</html>

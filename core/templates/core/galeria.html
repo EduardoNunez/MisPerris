@@ -1,0 +1,22 @@
+{% load static %}
+<!--context processor django === https://docs.djangoproject.com/es/2.1/ref/templates/api/ -->
+
+<!-- object_fit para que las imagenes se vean sentradas -->
+
+<div class="contenido2">
+    <div class="divgaleria" >
+
+            {% for m in m_galeria %} <!--Esta variable "mascotas" es la que traje de Views, es la variable que contiene todas las mascotas-->
+
+                <img class="imgGaleria"  src="{{m.imagen_Mascota.url}}" alt="{{ m.nombre_mascota }}.jpg" title="Hola mi nombre es {{ m.nombre_mascota }} y busco hogar " width="400px">
+
+            {% endfor %}
+            
+
+    </div>
+
+
+
+</div>
+
+

@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+
+@font-face {/*el font-face no funca -.- */
+    font-family: "Karla_local";/*damos nombre a la fuente*/
+    /*para src usamos url para señalar la ruta, 
+    y format para decirle el formato en el que esta la fuente,
+    pd: con comas podemos darle mas formatos y rutas para
+    mejorar la compatibilidad en navegadores*/
+    src: url('fonts\Karla.woff2') format('woff2');
+
+  }
+
+  .imgGaleria{
+    object-fit: contain !important ;
+    width: 30% !important;
+    margin: 5px !important;
+    border-radius: 10px !important;
+  }
+
+  .divgaleria{
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain!important;
+  }
+
+*{
+    margin:0%; 
+    padding: 0%;
+    font-family: Karla,Karla_local;
+} /*Los cambios que esten dentro de aqui se le aplican a toda la pagina*/
+
+/*  */
+
+* img{
+    border-radius:5px;
+}
+
+.contenidoLabel{
+    margin-left: 50;
+}
+
+.imgChocolate{
+    width: 400px;
+    height: 410px;
+}
+
+.imgPexel{
+    width: 400px;
+    height: 410px;
+    margin-top: 20px;
+}
+
+.imgLuna{
+    width: 450px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.imgBigotes{
+    width: 450px;
+    height: 520px;
+}
+
+.imgWifi{
+    width: 380px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.imgMaya{
+    width: 380px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.imgOso{
+    width: 400px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.contenido2 {
+    padding: 10px;
+    background-color: rgb(133, 212, 183);
+    display: flex;
+}
+
+/* .contenido2 > div {
+    width: 33%;
+} */
+
+
+
+/*  */
+
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+header{
+    width: 100%;
+    height: 110px;
+    background: rgb(133, 212, 183);
+}
+
+
+
+.logo{
+    width: 300px; 
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.navegacion{
+    float: right;
+    margin-right: 300px; 
+}
+
+.navegacion li{
+    display: inline-block; /*Sirve para que todos se formen en una linea// le ponemos LI para que tome todos los elementos de Listas */
+    margin-left:50px; /*Sirve para darle margenes al lado izquierdo */
+    background-color:  rgb(133, 212, 183); /*Sirve para darle el color a la lista entera*/
+    text-align: center; /*Sirve para centrar el texto de manera horizontal(no en medio de la lista solo en medio horizontalmentexd) */ 
+    padding-top:25px; /*Sirve para los margenes de arriba solo dentro de la lista */
+    transition:border-radius 0.5s;
+}
+
+.navegacion li:hover{/*Lo que esta dentro de esto se va a activar cuando se pase el cursor por encima */
+    border-radius:20px;
+}
+
+.navegacion li a{
+    color: white; /*Sirve para darle color a las letras que esten dentro de la lista en las etiquetas A*/
+    font-weight:bold; /*Sirve para darle formato de Negrita a las letras */
+    text-decoration: none; /*El "none" Es para quitar el subrrayado a los textos*/
+}
+
+.landing{
+    background-color:rgb(109,204,170);
+    width: 100%; /*El "100%" sirve para darle el formato ajustable, hace que se ajuste a toda la pagina preferentemente se usa en el ancho para que ocupe o se ajuste a todo el ancho de la pagina*/
+    height: 100px; 
+    padding-top: 30px;
+}
+
+.eslogan{
+    color:white;
+    text-align: center;
+    font-size:20px; /*Sirve para cambiar el tamaño de fuente*/
+}
+.social{
+    float: right;
+    margin-right:50px;
+    margin-top: -2%;
+}
+
+
+.social li{
+    display: inline-block; /*Sirve para ordenar las listas en linea, ya que las listas por defecto se ordenan de arriba hacia abajo*/
+    margin-left: 20px;
+    
+}
+
+.social li img{
+    width: 50px;
+    height: 50px;
+}
+
+.numero{
+    margin-left: 10px;
+    margin-top: -1%;
+}
+
+.contenido {
+    padding: 15px;
+}
+
+
+footer {
+    text-align: left;
+    height: 100px;
+    background-color: rgb(230, 230, 230);
+}
+
+.color_blanco{
+    color: white;
+}
+
+.color_negro{
+    color:rgb(145,149,152);
+}
+
+.color_negro2{
+    color:black;
+}
+
+.centrar_texto{
+    text-align: center;
+}
+
+.titulo{
+    text-align: left;
+    margin-left: 35%;
+}
+
+.subtitulo{
+    text-align: left;
+    margin-left: 39%;
+    font-size:15px;
+}
+
+.texto{
+    text-align: left;
+    margin-left: 14%;
+    font-size:10px;
+}
+
+.texto2{
+    text-align: left;
+    margin-left: 31.5%;
+    font-size:10px;
+}
+
+.titulo2{
+    text-align: right;
+    margin-right: 29%;
+}
+
+.subtitulo2{
+    text-align: right;
+    margin-right: 39.5%;
+    font-size:15px;
+}
+
+.texto3{
+    text-align: right;
+    margin-right: 18.2%;
+    font-size:10px;
+}
+
+.texto4{
+    text-align: right;
+    margin-right: 19%;
+    font-size:10px;
+}
+
+.imgRescate{
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    margin-right: 54%;
+    margin-top: 2%;
+}
+
+
+.imgComida{
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: auto;
+    margin-left: 50%;
+    margin-top: -29%;
+}
+.imagen_landing {
+    width:870px;
+    height: auto;
+    margin:auto;
+    display: block;
+}
+/*echo por mi*/
+.bx-wrapper { 
+    background-color:rgb(109,204,170)!important;
+    border:none!important;
+    box-shadow: none!important;
+    margin-bottom: 0px!important;
+    text-align: left!important;
+    /* color: blue!important; */
+}
+/*echo por mi*/
+.bx-caption{
+    float: left!important;
+    background: none!important;
+    margin-bottom: 20px!important;
+    margin-left: 400px!important;
+    width: 600px!important;
+    text-align: left!important;
+
+}
+
+/*echo por mi*/
+.bx-caption span{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular'
+    , 'Lucida Grande', 'Lucida Sans Unicode'
+    , Geneva, Verdana, sans-serif!important;
+    text-align: left;
+    font-size:30px!important;
+    color:black !important;
+    text-shadow: -2px -2px 1px white, 2px 2px 1px white
+    , -2px 2px 1px white, 2px -2px 1px white!important;
+    padding-left:140px!important; 
+    padding-right:140px!important;
+    text-align: left!important;
+    
+}
+
+.galeria img {
+    width: 300px;
+    height: auto;
+}
+
+/*Boton Campaña*/
+#btn{
+    border: 2px solid;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 8px;
+    font-weight: bold;
+    margin-left: 50%;
+}
+/*echo por mi*/
+@media (max-width:1600px) {
+    .bx-wrapper {
+        background-color:rgb(109,204,170)!important;
+        border:none!important;
+        box-shadow: none!important;
+        margin-bottom: 0px!important;
+        text-align: left!important;
+        /* color: blue!important; */
+    }
+    .bx-caption{
+        float: left!important;
+        background: none!important;
+        margin-bottom: 20px!important;
+        margin-left: 250px!important;
+        width: 600px!important;
+        text-align: left!important;
+    
+    }
+}
+/*echo por mi*/
+@media (max-width:1024px) {
+
+    .landing_image{
+        width: 100%;
+        height: auto;
+    }
+
+    .imgRescate{
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+    }
+    
+    .imgComida{
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+        margin-top: 0%;
+    }
+    
+    .eslogan{
+        text-align: center;
+        float: none;
+    }
+
+    .social{
+        float: none;
+        text-align: center;
+    }
+    
+    header {
+        height: 350px;
+    }
+
+    .navegacion {
+        float: none;
+        width: 80%;
+        margin-right: 0;
+        margin: auto;
+    }
+
+    .navegacion li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .landing {
+        height: auto;
+    } 
+    
+    .titulo{
+        text-align: center;
+        float: none;
+        margin-left: 0%;
+    }
+    
+    .subtitulo{
+        text-align: center;
+        float: none;
+        margin-left: 0%;
+    }
+    
+    .texto{
+        text-align: center;
+        float: none;
+        margin-left: 0%;
+    }
+    
+    .texto2{
+        text-align: center;
+        float: none;
+        margin-left: 0%;
+    }
+    
+    .titulo2{
+        text-align: center;
+        float: none;
+        margin-right: 0%;
+        margin-top: 0%;
+    }
+    
+    .subtitulo2{
+        text-align: center;
+        float: none;
+        margin-right: 0%;
+    }
+    
+    .texto3{
+        text-align: center;
+        float: none;
+        margin-right: 0%;
+    }
+    
+    .texto4{
+        text-align: center;
+        float: none;
+        margin-right: 0%;
+    }
+
+    .numero{
+        text-align: center;
+        padding: 0%;
+    }
+
+    footer{
+        text-align: center;
+        padding: 0%;
+    }
+
+    #btn{
+        text-align: center;
+        margin-left: 40%;
+    }
+    /*echo por mi*/
+    .bx-wrapper {
+        background-color:rgb(109,204,170)!important;
+        border:none!important;
+        box-shadow: none!important;
+        margin-top:auto!important; 
+
+    }
+    /*echo por mi*/
+    .bx-caption{
+        float: left!important;
+        background: none!important;
+        width: auto !important;
+        margin-left: auto !important;
+        margin-bottom:auto !important;
+        
+    }
+
+    .imgChocolate{
+        width: 94%;
+        height: 49.5%;
+    }
+    
+    .imgPexel{
+        width: 94%;
+        height: 49%;
+        margin-top: 5%;
+    }
+    
+    .imgLuna{
+        width: 100%;
+        height: 38.5%;
+        margin-top: 5%;
+    }
+    
+    .imgBigotes{
+        width: 100%;
+        height: 60%;
+    }
+    
+    .imgWifi{
+        width: 80%;
+        height: 28%;
+        margin-left: 0%;
+        margin-top: 5%;
+    }
+    
+    .imgMaya{
+        width: 80%;
+        height: 28%;
+        margin-left: 0%;
+        margin-top: 5%;
+    }
+    
+    .imgOso{
+        width: 90%;
+        height: 40%;
+        margin-left: 0%;
+    }
+
+
+}
+/*echo por mi*/
+@media (max-width:823px) {
+
+    .bx-wrapper {
+    background-color:rgb(109,204,170)!important;
+    border:none!important;
+    box-shadow: none!important;
+    margin-top:auto!important; 
+
+    }
+    .bx-caption{
+        float: left!important;
+        background: none!important;
+        width: 600px!important;
+        margin-left: -13% !important;
+        
+    }
+    .bx-caption span{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular'
+        , 'Lucida Grande', 'Lucida Sans Unicode'
+        , Geneva, Verdana, sans-serif!important;
+        text-align: left;
+        font-size:17px!important;
+    }
+
+}

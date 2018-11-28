@@ -1,0 +1,9 @@
+Diagrama Entidad relacion 
+Diagrama de clases
+Diagrama de secuencia
+Diagrama de comunicacion: Pueden integrar varios secuencia
+
+
+Vista logica
+
+Cada caso de uso pasa a ser un diagrama e secuencia

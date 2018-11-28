@@ -1,0 +1,145 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+
+{% block javascript %}
+    <script src="{% static 'core/js/formularioJs/onlyLetter.js'%}"></script>
+    <script src="{% static 'core/js/formularioJs/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'core/js/formularioJs/messages_es.min.js'%}"></script>
+    <script src="{% static 'core/js/formularioJs/validaciones.js'%}"></script>
+    <script src="{% static 'core/js/formularioJs/chaincombo.js'%}"></script>
+    <script src="{% static 'core/js/formularioJs/rut.js'%}"></script>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+{% endblock javascript %}
+
+
+{% block contenido %}
+
+{% load grouptags %}<!--/core/templatetags/grouptags.py-->
+<!--··········Formulario···················-->
+
+<div style="display:none;">{{request.user|list_groups}}</div>
+{% if request.user|has_group:"voluntarios" %} 
+<div class="container-fluid">
+        <div class="row">
+    
+            <div class="col-md-10 col-md-offset-1">
+                <div class="alert alert-warning text-center" >
+                    <strong>Advertencia</strong> No está autorizado para modificar mascotas.
+                </div>
+            </div>
+    
+      </div>
+    </div>
+{% else %}
+    
+{% for r in mensaje %}
+<h1>{{ r.mensaje }}</h1>
+{% endfor %}
+
+<!--··········Formulario···················-->
+<div class="row">
+    
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+
+        <form action="" method="POST" id="clienteFormulario">
+            <br><br>
+
+            {% csrf_token %}
+            
+            <div class="col">
+
+                <label for="">Correo Electronico</label>
+                <input type="text" name="txtCorreo" id="txtCorreo" placeholder="ejemplo@correo.com" class="form-control col-9">
+                <br><br>
+
+                <label for="">Run</label>
+                <input type="text" name="txtRun" id="txtRun" placeholder="12.345.678-9" class="form-control col-9">
+                <label id="mensajeRut" for=""></label>
+                <br><br>
+
+                    <script>//fotmatea el rut
+                        $("input#txtRun").rut({formatOn: 'keyup'});
+                        $("input#txtRun").rut({formatOn: 'blur', validateOn: 'blur'})
+                                .on('rutInvalido', function(){ 
+                                    $("#mensajeRut").html('rut invalido');
+                                });
+
+                        $("input#txtRun").rut({formatOn: 'blur', validateOn: 'keyup'})
+                                .on('rutValido', function(){ 
+                                    $("#mensajeRut").html('');
+                                });
+                    </script>
+
+                <label for="">Nombre Completo</label>
+                <input type="text" name="txtNombre" id="txtNombre" placeholder="su nombre" class="form-control col-9" onkeypress="return soloLetras(event)">
+                
+                <br><br>
+                <label for="">Fecha de Nacimiento</label>
+                <input type="date" name="fecha" id="fecha" class="form-control col-9">
+                <br><br>
+
+                <label  for="">Telefono de contacto</label>
+                <input type="number" name="txtTelefono" id="txtTelefono" placeholder="ej: 912345678" class="form-control col-9">
+                <br><br>
+
+                <label for="">Region</label>
+                <select name="cboRegion" class="form-control col-9 cboRegion" id="cboRegion">
+                    <option value="">Seleccionar</option>
+
+                        {% for r in regiones %}
+                        <option value="{{ r.id }}">{{ r.nombre_region }}</option>
+                        {% endfor %}
+
+                </select>
+                <br><br>
+
+                <label for="">Ciudad</label>
+                <select name="cboCiudad" class="form-control col-9 cboCiudad" id="cboCiudad" disabled>
+                    <option value="">Seleccionar</option>
+
+                        {% for c in ciudades %}
+                        <option value="{{ c.id }}">{{ c.nombre_ciudad }}</option>
+                        {% endfor %}
+
+                </select>
+                <br><br>
+
+                <!-- <label for="">Comuna</label> 
+                <select name="cboComuna" class="form-control col-9 cboComuna" id="cboComuna" disabled>
+                    <option value="">Seleccionar</option>
+
+                        {% for c in comunas %}
+                        <option value="{{ c.id }}">{{ c.nombre_comuna }}</option>
+                        {% endfor %}
+
+                </select>
+                <br><br> -->
+
+                <label for="">Tipo de Vivienda</label>
+                <select name="cboTipoViv" class="form-control col-9" id="cboTipoViv">
+                    <option value="">Seleccionar</option>
+
+                        {% for tv in tiposVivienda %}
+                        <option value="{{ tv.id }}">{{ tv.nombre_tipoVivienda }}</option>
+                        {% endfor %}
+
+                </select>
+                <br><br>
+
+                <input class="btn btn-info" type="submit" name="btnGuardar" id="btnGuardar" value="Guardar">
+                <br>
+                <br>
+
+            </div>
+        </form>
+    </div>
+</div>
+<!--·······································-->
+{% endif %}
+    {% include "core/galeria.html" %}
+
+{% endblock contenido %}

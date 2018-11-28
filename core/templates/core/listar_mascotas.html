@@ -1,0 +1,89 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+{% load grouptags %}<!--/core/templatetags/grouptags.py-->
+<!--··········Formulario···················-->
+
+<div style="display:none;">{{request.user|list_groups}}</div>
+{% if request.user|has_group:"voluntarios" %} 
+<div class="container-fluid">
+        <div class="row">
+    
+            <div class="col-md-10 col-md-offset-1">
+                <div class="alert alert-warning text-center" >
+                    <strong>Advertencia</strong> No está autorizado para modificar mascotas.
+                </div>
+            </div>
+    
+      </div>
+    </div>
+{% else %}
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <br><br>
+            <h2>Listado de mascotas</h2>
+            <br>
+
+            <table class="table table-bordered table-hover table-responsive" >
+                <tr>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Genero</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Foto</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
+
+                {% for m in mascotas %} <!--Esta variable "mascotas" es la que traje de Views, es la variable que contiene todas las mascotas-->
+                <!--y el Views lo mando a buscar a la base de datos-->
+                    <tr>
+                        <td>{{ m.nombre_mascota }}</td> 
+                        <td>{{ m.raza_mascota}}</td>
+                        <td>{{m.genero_formato}} </td>
+                        <td>{{ m.fecha_Nacimiento_Mascota}}</td>
+                        <td>{{ m.fecha_Ingreso}}</td>
+                        <td>
+                            
+                            
+
+                            {% if mascota.imagen == None %}                          
+                                <img src="{{m.imagen_Mascota.url}}" alt="{{ m.nombre_mascota }}.jpg" width="150px">
+                            {% else %}
+                                <img src="{% static 'core\img\perro_sin_foto.jpg' %}" alt="perro sin foto" width="150px>
+                            {% endif %} 
+
+                        </td>
+                        <!-- <td><img src="{{ m.imagen_Mascota.url }}" alt="{{ m.imagen_Mascota.url }}"></td> -->
+                        <td>{{ m.estado_Mascota}}</td>
+                        <td>
+                            <a href="{% url 'eliminar_mascota' m.id %}">Eliminar</a>
+                            <br>
+                            <a href="{% url 'modificar_mascota' m.id %}">Modificar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+    {% if messages %}
+    
+        {% for m in messages  %}
+
+        <div>{{ m }}</div>
+        
+        {% endfor %}
+
+    {% else %}
+    {% endif %}
+
+    {% endif %}
+{% endblock contenido %}
