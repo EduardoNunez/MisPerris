@@ -73,7 +73,7 @@ def login(request):
     return render(request, 'core/login.html')
 
 @login_required
-@permission_required('Mascota.can_add')
+@permission_required('Mascota.puede_agregar')
 def agregarMascota(request):
 
     generos = Genero.objects.all()

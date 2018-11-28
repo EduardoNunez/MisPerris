@@ -133,11 +133,11 @@ class Mascota(models.Model):
 
         return genero
     
-        class Meta:
-            permissions = (
-                ('puede_agregar', 'agrega mascotas')
-            )
-    
+    class Meta:
+        permissions = (
+            ('puede_agregar', 'agrega mascotas'),
+        )
+
     # @property
     # def imagen_Mascota_url(self):#para mostrar la foto en la lista y en otros medios
     #     if self.imagen_Mascota and hasattr(self.imagen_Mascota, 'url'):
